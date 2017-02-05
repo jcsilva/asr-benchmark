@@ -71,6 +71,7 @@ if __name__ == "__main__":
     file_list = argv[2]
 
     with open(file_list, 'r') as audio_list:
+        counter =0
         for audio_file in audio_list:
             response = transcribeAudio(audio_file.strip(), samplerate)
             lexical = ""
@@ -79,3 +80,9 @@ if __name__ == "__main__":
                 lexical = data['header']['lexical']
 
             print(audio_file.strip() + '\t' + lexical, flush=True)
+	    # workaround: it seems microsoft API blocks me when I try
+            # too many consecutive requests.
+            counter = counter + 1
+            if counter == 20:
+                counter = 0
+                time.sleep(40)
