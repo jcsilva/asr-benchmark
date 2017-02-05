@@ -45,7 +45,7 @@ pip install python-dotenv
 In this benchmark, word error rate (WER) and sentence error rate (SER) will be
 evaluated and you will need a tool to measure them.
 The `sclite`, included in 
-[NIST Speech Recognition Scoring Toolkit](ftp://jaguar.ncsl.nist.gov/pub/sctk-2.4.10-20151007-1312Z.tar.bz2) 
+[NIST Speech Recognition Scoring Toolkit](https://www.nist.gov/itl/iad/mig/tools) 
 may be used for this purpose. Another equivalent tool is the
 `compute-wer` from [kaldi toolkit](http://kaldi-asr.org/doc/tools.html). I used
 this last one just because I had kaldi installed in my machine.
