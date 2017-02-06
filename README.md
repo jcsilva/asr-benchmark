@@ -40,6 +40,7 @@ conda create -n asr python=3.5
 source activate asr
 pip install --upgrade watson-developer-cloud
 pip install python-dotenv
+pip install SpeechRecognition
 ```
 
 In this benchmark, word error rate (WER) and sentence error rate (SER) will be
@@ -81,6 +82,11 @@ python scripts/microsoftASR.py 16000 data/laps-16k.txt > results/microsoft-laps-
 python scripts/microsoftASR.py 8000  data/laps-8k.txt  > results/microsoft-laps-8k.tra
 python scripts/microsoftASR.py 16000 data/voxforge-16k.txt > results/microsoft-voxforge-16k.tra
 python scripts/microsoftASR.py 8000  data/voxforge-8k.txt  > results/microsoft-voxforge-8k.tra
+
+python scripts/googleASR.py data/laps-16k.txt > results/google-laps-16k.tra
+python scripts/googleASR.py data/laps-8k.txt  > results/google-laps-8k.tra
+python scripts/googleASR.py data/voxforge-16k.txt > results/google-voxforge-16k.tra
+python scripts/googleASR.py data/voxforge-8k.txt  > results/google-voxforge-8k.tra
 
 ./scripts/buildLapsHyp.sh results/ibm-laps-16k.tra > hypotheses/ibm-laps-16k.hyp
 ./scripts/buildLapsHyp.sh results/ibm-laps-8k.tra  > hypotheses/ibm-laps-8k.hyp
